@@ -1,0 +1,82 @@
+﻿@Html.Partial("_SliderPartial")   
+<section id="projects" class="row fullWidth">
+    <div class="row sectionTitles m0">
+        <h2 class="sectionTitle">Our Projects</h2>
+        <div class="sectionSubTitle">latest works</div>
+    </div>
+    <div class="row filters m0">
+        <button type="button" class="collapsed project_filderButton visible-xs" data-toggle="collapse" data-target="#filters">
+            <span class="btn-text"><i class="fa fa-filter"></i> Project Filter</span>
+        </button>
+        <ul class="list-inline text-center collapse navbar-collapse" id="filters">
+            <li class="filter tyt" data-filter="all"><span aria-hidden="true" class="glyphicon glyphicon-th-large ll"></span>&nbsp;&nbsp;&nbsp;&nbsp;Show All</li>
+            <li class="filter" data-filter=".catHospital">Commercial Building Projects</li>
+            <li class="filter" data-filter=".catSchools">Residential Building Projects</li>
+            <li class="filter" data-filter=".catHouses">Industrial Building Projects</li>
+        </ul>
+    </div>
+    <div class="row projects m0">
+        <div class="container">
+            <div class="project mix catHouses">
+                <a href="images/projects/project1.png" data-lightbox="project" data-title="Central Hospital (building)">
+                    <img src="images/projects/project1.png" alt="Project 1" class="projectImg">
+                </a>
+                <div class="projectDetails row m0">
+                    <div class="fleft nameType">
+                        <div class="row m0 projectName">Power System</div>
+                        <div class="row m0 projectType">Commercial Bulding Projects</div>
+                    </div>
+                    <div class="fright projectIcons btn-group" role="group">
+                        <a href="images/projects/project1.png" data-lightbox="project" data-title="Central Hospital (building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project mix catHospital">
+                <a href="images/projects/project2.png" data-lightbox="project" data-title="Construction CEO (ceo, architect)">
+                    <img src="images/projects/project2.png" alt="Project 1" class="projectImg">
+                </a>
+                <div class="projectDetails row m0">
+                    <div class="fleft nameType">
+                        <div class="row m0 projectName">Verticle Turbine Set</div>
+                        <div class="row m0 projectType">Commercial Bulding Projects</div>
+                    </div>
+                    <div class="fright projectIcons btn-group" role="group">
+                        <a href="images/projects/project2.png" data-lightbox="project" data-title="Construction CEO (ceo, architect)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project mix catFlats">
+                <a href="images/projects/project3.png" data-lightbox="project" data-title="Workder Accessories (tools, accessories)">
+                    <img src="images/projects/project3.png" alt="Project 1" class="projectImg">
+                </a>
+                <div class="projectDetails row m0">
+                    <div class="fleft nameType">
+                        <div class="row m0 projectName">Workder Accessories</div>
+                        <div class="row m0 projectType">tools, accessories</div>
+                    </div>
+                    <div class="fright projectIcons btn-group" role="group">
+                        <a href="images/projects/project3.png" data-lightbox="project" data-title="Workder Accessories (tools, accessories)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project mix catSchools">
+                <a href="images/projects/project4.png" data-lightbox="project" data-title="Rebuilding an old University (university, building)">
+                    <img src="images/projects/project4.png" alt="Project 1" class="projectImg">
+                </a>
+                <div class="projectDetails row m0">
+                    <div class="fleft nameType">
+                        <div class="row m0 projectName">Rebuilding an old University</div>
+                        <div class="row m0 projectType">university, building</div>
+                    </div>
+                    <div class="fright projectIcons btn-group" role="group">
+                        <a href="images/projects/project4.png" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
