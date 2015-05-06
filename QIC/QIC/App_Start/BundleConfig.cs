@@ -8,28 +8,6 @@ namespace QIC
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-            //            "~/Scripts/jquery-{version}.js",
-            //            "~/Scripts/_references.js"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-            //            "~/Scripts/jquery.validate*"));
-
-            //// Use the development version of Modernizr to develop with and learn from. Then, when you're
-            //// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-            //          "~/Scripts/bootstrap.js",
-            //          "~/Scripts/respond.js"));
-
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //          "~/Content/bootstrap.css",
-            //          "~/Content/site.css"));
-            //,
-            //         "~/Scripts/bootstrap.js"
-
             bundles.Add(new ScriptBundle("~/bundles/script").Include(
                       "~/vendors/rs-plugin/js/jquery.themepunch.tools.min.js",
                       "~/vendors/rs-plugin/js/jquery.themepunch.revolution.min.js",
@@ -52,6 +30,21 @@ namespace QIC
                       "~/vendors/lightbox/css/lightbox.css",
                         "~/css/style.css"
                       ));
+
+            // Admin Panel
+            bundles.Add(new StyleBundle("~/Admin/PanelCSS").Include(
+                "~/css/bootstrap.min.css",
+                "~/css/sb-admin.css",
+                "~/css/plugins/morris.css",
+                "font - awesome / css / font - awesome.min.css"
+                ));
+            bundles.Add(new ScriptBundle("~/Admin/PanelJs").Include(
+                "js/jquery.js",
+                "js/bootstrap.min.js",
+                "js/plugins/morris/raphael.min.js",
+                "js/plugins/morris/morris.min.js",
+                "js/plugins/morris/morris-data.js"
+                ));
         }
     }
 }
