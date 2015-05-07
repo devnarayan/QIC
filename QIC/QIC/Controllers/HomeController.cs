@@ -43,6 +43,10 @@ namespace QIC.Controllers
         {
             return View();
         }
+        public ActionResult Oraganization()
+        {
+            return View();
+        }
         public ActionResult CertificationRegistration()
         {
             return View();

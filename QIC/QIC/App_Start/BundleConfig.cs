@@ -17,6 +17,7 @@ namespace QIC
                       "~/vendors/js-flickr-gallery/js/js-flickr-gallery.min.js",
                       "~/vendors/lightbox/js/lightbox.min.js",
                       "~/js/construction.js",
+                       "~/js/google-map.js",
                       "~/js/jquery-2.1.3.min.js",
                       "~/js/bootstrap.min.js"));
 
