@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Introduction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="ContentController" data-ng-init="GetContentListByID()">
+    <input type="hidden" id="hdnfld" value="9" />
+    <section id="pageCover" class="row aboutUs">
+        <div class="row pageTitle">Introduction</div>
+        <div class="row pageBreadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("Index","QIC", new { area = "En" })">home</a></li>
+                <li class="active">Introduction</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="aboutus" class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="row aboutContent">
+                        <div class="row aboutUsTexts m0 member">
+                            <div class="fleft textsPart jumbotron">
+                                <h2 data-ng-bind-html="ContentList[1].LangContent">@*INTRODUCTION*@</h2>
+                                <p data-ng-bind-html="ContentList[2].LangContent">
+                                    @*This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. <br><br> Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.*@
+                                  
+                                </p>
+                            </div>
+                            <div class="fleft aboutImg">
+                                <img src="~/images/team/about-us.png" alt="">
+                            </div>
+                        </div>
+                        <div class="row m0 members">
+                            <div class="col-sm-4 member3_1 member">
+                                <div class="row m0">
+                                    <div class="row m0 memImg">
+                                        <img src="~/images/team/mem1.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="row m0 memberIntro">
+                                        <div class="row m0 name">Mr. Mohammed Munawar</div>
+                                        <div class="row m0 pro">Chief Executive Officer</div>
+                                        <div class="row m0 qqqqq">
+                                            <ul class="list-inline memberSocial">
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 member3_1 member">
+                                <div class="row m0">
+                                    <div class="row m0 memImg">
+                                        <img src="~/images/team/mem2.png" alt="">
+                                    </div>
+                                    <div class="row m0 memberIntro">
+                                        <div class="row m0 name">Mr. Abdel Hadi Qasqas</div>
+                                        <div class="row m0 pro">Architect</div>
+                                        <div class="row m0 qqqqq">
+                                            <ul class="list-inline memberSocial">
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 member3_1 member">
+                                <div class="row m0">
+                                    <div class="row m0 memImg">
+                                        <img src="~/images/team/mem3.png" alt="">
+                                    </div>
+                                    <div class="row m0 memberIntro">
+                                        <div class="row m0 name">William Mayer</div>
+                                        <div class="row m0 pro">Finance Manager</div>
+                                        <div class="row m0 qqqqq">
+                                            <ul class="list-inline memberSocial">
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section FooterScript{
+    <script src="~/AgController/ContentJS.js"></script>
+}
+

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QICdbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageID" />
+    </Key>
+    <Property Name="LanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LangShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_Language" FromRole="Language" ToRole="Menu" />
+    <NavigationProperty Name="HeaderContents" Relationship="QICdbModel1.FK_HederContent_Language" FromRole="Language" ToRole="HeaderContent" />
+    <NavigationProperty Name="Contents" Relationship="QICdbModel1.FK_Content_Language" FromRole="Language" ToRole="Content" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="EnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LangName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_Menu_Language" FromRole="Menu" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="WebPage">
+    <Key>
+      <PropertyRef Name="WebPageID" />
+    </Key>
+    <Property Name="WebPageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageNo" Type="Int32" />
+    <Property Name="PageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Contents" Relationship="QICdbModel1.FK_Content_WebPage" FromRole="WebPage" ToRole="Content" />
+  </EntityType>
+  <Association Name="FK_Menu_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QICdbEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="WebPages" EntityType="Self.WebPage" />
+    <AssociationSet Name="FK_Menu_Language" Association="Self.FK_Menu_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <EntitySet Name="HeaderContents" EntityType="QICdbModel1.HeaderContent" />
+    <AssociationSet Name="FK_HederContent_Language" Association="QICdbModel1.FK_HederContent_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="HeaderContent" EntitySet="HeaderContents" />
+    </AssociationSet>
+    <EntitySet Name="Contents" EntityType="QICdbModel1.Content" />
+    <AssociationSet Name="FK_Content_Language" Association="QICdbModel1.FK_Content_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Content" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Content_WebPage" Association="QICdbModel1.FK_Content_WebPage">
+      <End Role="WebPage" EntitySet="WebPages" />
+      <End Role="Content" EntitySet="Contents" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HeaderContent">
+    <Key>
+      <PropertyRef Name="HeaderID" />
+    </Key>
+    <Property Name="HeaderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="HeaderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderContent1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="QICdbModel1.FK_HederContent_Language" FromRole="HeaderContent" ToRole="Language" />
+  </EntityType>
+  <Association Name="FK_HederContent_Language">
+    <End Type="QICdbModel1.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="QICdbModel1.HeaderContent" Role="HeaderContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="HeaderContent">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="WebPageID" Type="Int32" />
+    <Property Name="EnContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LangContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsReachText" Type="Boolean" />
+    <NavigationProperty Name="Language" Relationship="QICdbModel1.FK_Content_Language" FromRole="Content" ToRole="Language" />
+    <NavigationProperty Name="WebPage" Relationship="QICdbModel1.FK_Content_WebPage" FromRole="Content" ToRole="WebPage" />
+  </EntityType>
+  <Association Name="FK_Content_Language">
+    <End Type="QICdbModel1.Language" Role="Language" Multiplicity="0..1" />
+    <End Type="QICdbModel1.Content" Role="Content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="Content">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Content_WebPage">
+    <End Type="QICdbModel1.WebPage" Role="WebPage" Multiplicity="0..1" />
+    <End Type="QICdbModel1.Content" Role="Content" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebPage">
+        <PropertyRef Name="WebPageID" />
+      </Principal>
+      <Dependent Role="Content">
+        <PropertyRef Name="WebPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

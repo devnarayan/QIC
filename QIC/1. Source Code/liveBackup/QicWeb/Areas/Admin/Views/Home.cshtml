@@ -1,0 +1,58 @@
+﻿@model QIC.Areas.Admin.Models.HeaderMdl
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2> Manage Home</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Header Content</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LanguageID">Select Language</label>
+            <div class="col-md-10">
+                @Html.DropDownList("LanguageID", String.Empty)
+                @Html.ValidationMessageFor(model => model.LanguageID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LanguageID">Home</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" id="HomeTab" name="HomeTab" type="text" value="">
+                @Html.ValidationMessageFor(model => model.HomeTab)
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LanguageID">Contact</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" id="ContactTab" name="ContactTab" type="text" value="">
+                @Html.ValidationMessageFor(model => model.ContactTab)
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LanguageID">About</label>
+            <div class="col-md-10">
+                <input class="text-box single-line" id="AboutTab" name="AboutTab" type="text" value="">
+                @Html.ValidationMessageFor(model => model.AboutTab)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

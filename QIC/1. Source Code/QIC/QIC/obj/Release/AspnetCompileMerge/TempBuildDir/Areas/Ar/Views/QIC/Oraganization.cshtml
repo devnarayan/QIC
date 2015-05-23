@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Oraganization";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-app="ContentApp" data-ng-controller="ContentController" data-ng-init="GetContentListByID()">
+    <input type="hidden" id="hdnfld" value="12" />
+
+    <section id="pageCover" class="row aboutUs">
+        <div class="row pageTitle">Oraganization</div>
+        <div class="row pageBreadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("Index","QIC", new { area = "Ar" })">home</a></li>
+                <li class="active">Oraganization</li>
+            </ol>
+        </div>
+    </section>
+    <section id="aboutus" class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="row aboutContent">
+                        <div class="row m0 member">
+                            <div class="jumbotron">
+                                <h2 data-ng-bind-html="ContentList[1].LangContent"></h2>
+                                <div class="chart">
+                                    @*<img src="~/images/Qic_Chart.jpg" class="img-responsive">*@
+                                    <img src="~/images/Qic_Chart.jpg" class="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section FooterScript{
+    <script src="~/AgController/ContentJS.js"></script>
+}

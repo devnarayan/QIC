@@ -1,0 +1,73 @@
+﻿@model QIC.Areas.Admin.Models.Content
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>HomePage</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Content</h4>
+        <hr />
+       @* @Html.ValidationSummary(true)
+
+    <div class="form-group">
+         @Html.LabelFor(model => model.LanguageID, "LanguageID", new { @class = "control-label col-md-2" })
+         <div class="col-md-10">
+             @Html.DropDownList("LanguageID", "Select")
+             @Html.ValidationMessageFor(model => model.LanguageID)
+         </div>
+     </div>*@
+        <div class="form-group">
+            <label class="control-label col-md-2">Language:</label>
+            <div class="col-md-10">
+                <select>
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">WebPage Id:</label>
+            <div class="col-md-10">
+                <input type="text" id="txtWebPageID" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Scope of Work:</label>
+            <div class="col-md-10">
+                <input type="text" id="txtScopeOfWork" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Mechanical:</label>
+            <div class="col-md-10">
+                <input type="text" id="txtMechanical" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Electrical:</label>
+            <div class="col-md-10">
+                <input type="text" id="txtElectrical" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Our Project:</label>
+            <div class="col-md-10">
+                <input type="text" id="txtOurProject" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

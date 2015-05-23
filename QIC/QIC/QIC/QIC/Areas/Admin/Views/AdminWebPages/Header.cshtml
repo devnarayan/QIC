@@ -1,0 +1,194 @@
+﻿@model QIC.Areas.Admin.Models.Content
+@{
+    ViewBag.Title = "Header & Footer";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Header</h2>
+<div class="form-horizontal">
+    <h4>Header</h4>
+    <hr />
+    <div class="form-group" data-ng-app="HeaderApp" data-ng-controller="HeaderController" data-ng-init="Getlanguage()">
+        <label class="control-label col-md-2">Language:</label>
+        <div class="col-md-10">
+            <select id="DDlLanguage" class="text-box" data-ng-model="Header_Content.LanguageID" data-ng-change="GetHeaderContent()" style="color:black;">
+                <option data-ng-repeat="re in LanguageList" value="{{re.LanguageID}}">{{re.Lang}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Home:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtHome" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">QIC:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtQIC" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mission & Vision:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtMission" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">GM Message:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtGMMessage" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Introduction:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtIntroduction" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Scope of work:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtScope" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Certification & Registration:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtCertification" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Organization:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtOrganization" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Projects:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtProjects" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Accomplished with:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtAccomplish" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Ongoing:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtOngoings" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Career:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtCareer" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Contact Us:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtContactUs" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">About Company:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtAboutCompany" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">About Company Content:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtAboutCompanyContent" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Company:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtCompany" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">CONTACT INFORMATION:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtCONTACTINFO" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Phone:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtPhone" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Fax:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtFax" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Email:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtEmail" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Address:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtAddress1" />
+            <input type="text" id="txtAddress2" />
+            <input type="text" id="txtAddress3" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Copyright:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtCopyright" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">All Rights:</label>
+        <div class="col-md-10">
+            <input type="text" id="txtRights" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Update" data-ng-click="updaterecord()" />
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/AgController/HeaderJS.js"></script>
+<script type="text/javascript">
+
+    var basePath = '@System.Configuration.ConfigurationManager.AppSettings["BasePath"]'
+
+</script>
+
+

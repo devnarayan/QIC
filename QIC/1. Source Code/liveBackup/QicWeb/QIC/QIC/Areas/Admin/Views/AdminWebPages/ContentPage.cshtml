@@ -1,0 +1,72 @@
+﻿@*@model QIC.Areas.Admin.Models.ContentModel*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Content Page</h1>
+<div class="form-horizontal" data-ng-app="ContentApp" data-ng-controller="ContentController">
+    <h4>Update Content</h4>
+    <div class="form-group" data-ng-init="Getlanguage()">
+        <div class="col-md-2">
+            LanguageID
+        </div>
+        <div class="col-md-10">
+            <select id="DDlLanguage" class="text-box" data-ng-model="LangugeModel.LanguageID" style="color:black;">
+                <option data-ng-repeat="re in LanguageList" value="{{re.LanguageID}}">{{re.Lang}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            WebPageID
+        </div>
+        <div class="col-md-10">
+            <select id="DDlWebPage" class="text-box" style="color:black;" data-ng-model="WebPageModel.WebPageID" data-ng-change="GetContentList()">
+                <option data-ng-repeat="re in WebPAgeList" value="{{re.WebPageID}}">{{re.PageName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            Content
+        </div>
+        <div class="col-md-10">
+            <select id="DDlContent" class="text-box" style="color:black;" data-ng-model="ContentModel.ContentID" data-ng-change="GetLangContent()">
+                <option data-ng-repeat="re in ContentList" value="{{re.ContentID}}">{{re.EnContent}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            Content Text
+        </div>
+        <div class="col-md-10">
+            <input type="text" id="txtContent1" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <textarea id="txtContent2"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <input type="button" value="Update" data-ng-click="UpdateContent()" />
+        </div>
+    </div>
+
+
+
+</div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/AgController/ContentJS.js"></script>
+<script type="text/javascript">
+
+    var basePath = '@System.Configuration.ConfigurationManager.AppSettings["BasePath"]'
+
+</script>

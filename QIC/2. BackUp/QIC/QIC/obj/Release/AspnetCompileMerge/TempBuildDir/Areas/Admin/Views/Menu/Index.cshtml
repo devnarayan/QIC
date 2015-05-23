@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QIC.Areas.Admin.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EnName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LangName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.Lang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LangName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language.Lang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MenuID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MenuID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MenuID })
+        </td>
+    </tr>
+}
+
+</table>
