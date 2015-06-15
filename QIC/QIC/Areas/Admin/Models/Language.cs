@@ -16,17 +16,17 @@ namespace QIC.Areas.Admin.Models
     {
         public Language()
         {
-            this.Menus = new HashSet<Menu>();
             this.HeaderContents = new HashSet<HeaderContent>();
             this.Contents = new HashSet<Content>();
+            this.ContentImages = new HashSet<ContentImage>();
         }
     
         public int LanguageID { get; set; }
         public string Lang { get; set; }
         public string LangShort { get; set; }
     
-        public virtual ICollection<Menu> Menus { get; set; }
         public virtual ICollection<HeaderContent> HeaderContents { get; set; }
         public virtual ICollection<Content> Contents { get; set; }
+        public virtual ICollection<ContentImage> ContentImages { get; set; }
     }
 }

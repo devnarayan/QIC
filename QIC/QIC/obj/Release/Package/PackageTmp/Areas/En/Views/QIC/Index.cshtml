@@ -11,15 +11,16 @@
                 <ul>
                     <!-- SLIDE  -->
                     <li data-transition="boxslide" data-slotamount="7">
-                        <img src="~/images/slider/slide1.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="~/images/slider/image.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                         <div class="caption sfr str"
                              data-x="center"
                              data-y="140"
                              data-speed="700"
                              data-start="1700"
-                             data-easing="easeOutBack" data-ng-bind-html="ContentList[2].LangContent">
+                             data-easing="easeOutBack">
                             @*<h2>We Are <strong>Construction</strong> Company</h2>*@
-                            
+                            <div data-ng-bind-html="ContentList[2].LangContent"></div>
+
                         </div>
                         <div class="caption sfl stl"
                              data-x="center"
@@ -27,7 +28,61 @@
                              data-speed="500"
                              data-start="1900"
                              data-easing="easeOutBack">
-                            <div class="cont-row" data-ng-bind-html="ContentList[3].LangContent">@*We are <span class="bb3">Construction</span> Company <span class="bb1">buildings</span>*@</div>
+                            <div class="cont-row">
+                                <div data-ng-bind-html="ContentList[3].LangContent">
+                                </div> @*We are <span class="bb3">Construction</span> Company <span class="bb1">buildings</span>*@
+                            </div>
+                        </div>
+                        <div class="caption skewfromleft skewtoleft"
+                             data-x="center"
+                             data-y="310"
+                             data-hoffset="-176"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <div class="ico_box"><img src="~/images/slider/ico1.png" alt="brifcase"></div>
+                        </div>
+                        <div class="caption sfb stb"
+                             data-x="center"
+                             data-y="310"
+                             data-hoffset="0"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <div class="ico_box"><img src="~/images/slider/ico2.png" alt="brifcase"></div>
+                        </div>
+                        <div class="caption skewfromright skewtoright"
+                             data-x="center"
+                             data-y="310"
+                             data-hoffset="176"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <div class="ico_box"><img src="~/images/slider/ico3.png" alt="brifcase"></div>
+                        </div>
+                    </li>
+                    <li data-transition="boxslide" data-slotamount="7">
+                        <img src="~/images/slider/slide1.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <div class="caption sfr str"
+                             data-x="center"
+                             data-y="140"
+                             data-speed="700"
+                             data-start="1700"
+                             data-easing="easeOutBack">
+                            @*<h2>We Are <strong>Construction</strong> Company</h2>*@
+                            <div data-ng-bind-html="ContentList[2].LangContent"></div>
+
+                        </div>
+                        <div class="caption sfl stl"
+                             data-x="center"
+                             data-y="225"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <div class="cont-row">
+                                <div data-ng-bind-html="ContentList[3].LangContent">
+                                </div> @*We are <span class="bb3">Construction</span> Company <span class="bb1">buildings</span>*@
+                            </div>
                         </div>
                         <div class="caption skewfromleft skewtoleft"
                              data-x="center"
@@ -66,16 +121,16 @@
                              data-speed="700"
                              data-start="1700"
                              data-easing="easeOutBack">
-                            <h3>@*<strong>Flexible</strong> and Easy to Use*@{{ContentList[4].LangContent}}</h3>
+                            <div data-ng-bind-html="ContentList[4].LangContent"></div>
                         </div>
-                        @*<div class="caption sfl stl"
-                                 data-x="-100"
-                                 data-y="190"
-                                 data-speed="500"
-                                 data-start="1900"
-                                 data-easing="easeOutBack">
-                                <h4>Ultra <strong>Construction</strong> Layout</h4>
-                            </div>*@
+                        <div class="caption sfl stl"
+                     data-x="-100"
+                     data-y="190"
+                     data-speed="500"
+                     data-start="1900"
+                     data-easing="easeOutBack">
+                    <h4>Ultra <strong>Construction</strong> Layout</h4>
+                </div>
                         <div class="caption skewfromleft skewtoleft"
                              data-x="-100"
                              data-y="265"
@@ -85,7 +140,7 @@
                              data-easing="easeOutBack">
                             <p data-ng-bind-html="ContentList[5].LangContent">
                                 @*This is Photoshop's version of Lorem Ipsum. Proin gravi-<br>da nibh vel velit auctor aliquet. Aenean solicitudin. lorem <br>quis bibendum auctor, nisi elit consequant.*@
-                                
+
                             </p>
                         </div>
                         <div class="caption sfb stb"
@@ -115,9 +170,9 @@
                              data-y="135"
                              data-speed="700"
                              data-start="1700"
-                             data-easing="easeOutBack" data-ng-bind-html="ContentList[7].LangContent">
-                           
-                            @*<h3><strong>Construction</strong> use</h3>*@
+                             data-easing="easeOutBack" >
+                            <div data-ng-bind-html="ContentList[7].LangContent"></div>
+                                 @*<h3><strong>Construction</strong> use</h3>*@
                         </div>
                         <div class="caption sfl stl"
                              data-x="-100"
@@ -125,7 +180,8 @@
                              data-speed="500"
                              data-start="1900"
                              data-easing="easeOutBack">
-                            @*<h4>Built with <strong>Construction</strong></h4>*@
+                            <div></div>
+                            <h4>Built with <strong>Construction</strong></h4>
                         </div>
                         <div class="caption skewfromleft skewtoleft"
                              data-x="-100"
@@ -136,7 +192,7 @@
                              data-easing="easeOutBack">
                             <p data-ng-bind-html="ContentList[8].LangContent">
                                 @*This is Photoshop's version of Lorem Ipsum. Proin gravi-<br>da nibh vel velit auctor aliquet. Aenean solicitudin. lorem <br>quis bibendum auctor, nisi elit consequant.*@
-                             
+
                             </p>
                         </div>
                         <div class="caption sfb stb"

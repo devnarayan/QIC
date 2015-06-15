@@ -26,8 +26,8 @@ myApp.controller('HeaderFooterController', function ($http, $scope) {
         
         var LanguageID = localStorage.getItem("Lang");
         if (LanguageID == null) {
-            alert($('#DDlLanguage').checked)
-            LanguageID = $('#DDlLanguage').checked;
+            LanguageID = 3;// $('#DDlLanguage').checked;
+           // localStorage.setItem("Lang", 3);
         }
         $scope.LanguageID = LanguageID;
         if (LanguageID == 3) {

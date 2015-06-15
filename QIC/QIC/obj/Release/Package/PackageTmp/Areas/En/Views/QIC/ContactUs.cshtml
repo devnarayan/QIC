@@ -21,8 +21,8 @@
                 <div class="row m0">
                     <div class="col-sm-6">
                         <div class="row m0">
-                            <h3>@*Get in touch!*@@*{{ContentList[1].LangContent}}*@</h3>
-                            <p data-ng-bind-html="ContentList[1].LangContent">@*This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor <br><br>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.*@{{ContentList[2].LangContent}}</p>
+                            <h3 data-ng-bind-html="ContentList[1].LangContent">@*Get in touch!*@</h3>
+                            <p data-ng-bind-html="ContentList[2].LangContent">@*This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor <br><br>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.*@</p>
                             <ul class="list-inline">
                                 <li><i class="fa fa-home" data-ng-bind-html="ContentList[3].LangContent"></i>@*92690 Riyadh 11663*@</li>
                                 <li><i class="fa fa-phone" data-ng-bind-html="ContentList[4].LangContent"></i> @*+966 11 47 43 177*@ </li>
@@ -33,8 +33,9 @@
                     <div class="col-sm-6">
                         <div class="row m0 commentForm">
                             <form class="row m0" id="contactForm" method="post" name="contact" action="@Url.Action("ContactUS","QIC",new{area="En"})" @*action="http://premiumlayers.com/demos/construction/contact_process.php"*@>
+                                <label>@ViewBag.Msg</label>
                                 <div class="col-sm-6 p0 commenterInfoInputs">
-                                    <label>@ViewBag.Msg</label>
+
                                     <div class="row m0">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>

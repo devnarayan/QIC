@@ -118,4 +118,103 @@ myApp.controller('ContentController', function ($http, $scope) {
             console.log(err);
         })
     }
+   
+
+    $scope.GetContentPicsatScopeInit = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPics',
+            data: { ContentImageID: 1 , LanguageID:3,WebPageID:8}
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPics1',
+            data: { ContentImageID: 3, LanguageID: 3, WebPageID: 8 }
+        }).success(function (data) {
+            $scope.SelectPic = data;
+        })
+    }
+    $scope.GetContentScopeInit = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPics2',
+            data: { ContentImageID: 2, LanguageID: 4, WebPageID: 8 }
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPics3',
+            data: { ContentImageID: 4, LanguageID: 4, WebPageID: 8 }
+        }).success(function (data) {
+            $scope.PicName = data;
+        })
+    }
+
+    $scope.GetContentPicsatProjectInit = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished',
+            data: { ContentImageID: 13, LanguageID: 3, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished1',
+            data: { ContentImageID: 15, LanguageID: 3, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPic = data;
+        })
+    }
+    $scope.GetContentProjectInit = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished2',
+            data: { ContentImageID: 14, LanguageID: 4, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished3',
+            data: { ContentImageID: 16, LanguageID: 4, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPic = data;
+        })
+    }
+    $scope.GetContentProjectOngoingInit = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished4',
+            data: { ContentImageID: 14, LanguageID: 4, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished5',
+            data: { ContentImageID: 16, LanguageID: 4, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPic = data;
+        })
+    }
+    $scope.GetContentPicsatProject1Init = function () {
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished6',
+            data: { ContentImageID: 13, LanguageID: 3, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPicName = data;
+        })
+        $http({
+            method: 'Post',
+            url: basePath + '/AdminWebPages/GetPicsAcomplished7',
+            data: { ContentImageID: 15, LanguageID: 3, WebPageID: 3 }
+        }).success(function (data) {
+            $scope.SelectPic = data;
+        })
+    }
 });

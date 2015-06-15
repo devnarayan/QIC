@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "AcomplishedWith";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="ContentController" data-ng-init="GetContentListByID()">
+    <input type="hidden" id="hdnfld" value="14" />
+
+    <section id="pageCover" class="row aboutUs">
+        <div class="row pageTitle"></div>
+        <div class="row pageBreadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("Index","QIC", new { area = "En" })">home</a></li>
+                <li class="active">Acomplished With</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="aboutus" class="row">
+        <div class="container" data-ng-init="GetContentProjectInit()">
+            <!--portfolio start-->
+            <div class="container">
+                <div class="jumbotron v">
+                    <h2 class="text-center" data-ng-bind-html="ContentList[1].LangContent">@*Project*@</h2>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="panel panel-default v2">
+                            <div class="panel-heading v4">
+                                <h2 class="panel-title text-center v3" data-ng-bind-html="ContentList[2].LangContent">@*AcomplishedWith*@</h2>
+                            </div>
+                            <div class="panel-image hide-panel-body">
+                                <img src="{{SelectPicName.PicsUrl}}" class="panel-image-preview" />
+                            </div>
+                            <div class="panel-body v">
+                                <h4 data-ng-bind-html="ContentList[4].LangContent">@*Title of Image*@</h4>
+                                <p data-ng-bind-html="ContentList[5].LangContent">@*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper et.*@</p>
+                            </div>
+                            <div class="panel-footer text-center v1">
+                                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="panel panel-default v2">
+                            <div class="panel-heading v4">
+                                <h2 class="panel-title text-center v3" data-ng-bind-html="ContentList[3].LangContent">@*OnGoing*@</h2>
+                            </div>
+                            <div class="panel-image hide-panel-body">
+                                <img src="{{SelectPic.PicsUrl}}" class="panel-image-preview" />
+                            </div>
+                            <div class="panel-body v">
+                                <h4 data-ng-bind-html="ContentList[6].LangContent">@*Title of Image*@</h4>
+                                <p data-ng-bind-html="ContentList[7].LangContent">@*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper et.*@</p>
+                            </div>
+                            <div class="panel-footer text-center v1">
+                                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--portpfolio end-->
+        </div>
+    </section>
+
+</div>
+
+
+
+@section FooterScript{
+<script src="~/AgController/ContentJS.js"></script>
+}

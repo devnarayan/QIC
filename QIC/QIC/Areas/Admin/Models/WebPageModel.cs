@@ -11,4 +11,12 @@ namespace QIC.Areas.Admin.Models
         public int PageNo { get; set; }
         public string PageName { get; set; }
     }
+    public class ContantImageModel
+    {
+        public int ContentImageID { get; set; }
+        public Nullable<int> LanguageID { get; set; }
+        public Nullable<int> WebPageID { get; set; }
+        public string LangContent { get; set; }
+        public string PicsUrl { get; set; }
+    }
 }

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -178,7 +179,11 @@
     <Compile Include="Areas\Admin\Controllers\HeaderController.cs" />
     <Compile Include="Areas\Admin\Controllers\LanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebPageQICController.cs" />
+    <Compile Include="Areas\Admin\Models\ContantPicModel.cs" />
     <Compile Include="Areas\Admin\Models\Content.cs">
+      <DependentUpon>Header.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\ContentImage.cs">
       <DependentUpon>Header.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\ContentModel.cs" />
@@ -205,10 +210,6 @@
       <DependentUpon>Header.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\LangugeModel.cs" />
-    <Compile Include="Areas\Admin\Models\Menu.cs" />
-    <Compile Include="Areas\Admin\Models\spGetLanguage_Result.cs">
-      <DependentUpon>Header.tt</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Admin\Models\WebPage.cs">
       <DependentUpon>Header.tt</DependentUpon>
     </Compile>
@@ -232,11 +233,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgController\AcomplishedWith.js" />
     <Content Include="AgController\AdminJS.js" />
     <Content Include="AgController\ContentJS.js" />
     <Content Include="AgController\FooterJS.js" />
     <Content Include="AgController\HeaderFooterJS.js" />
     <Content Include="AgController\HeaderJS.js" />
+    <Content Include="AgController\OnGoing.js" />
+    <Content Include="AgController\UploadPicJS.js" />
     <Content Include="ContentPage1.html" />
     <Content Include="Areas\parser_rules\advanced.js" />
     <Content Include="Areas\parser_rules\simple.js" />
@@ -301,6 +305,7 @@
     <Content Include="images\slider\ico1.png" />
     <Content Include="images\slider\ico2.png" />
     <Content Include="images\slider\ico3.png" />
+    <Content Include="images\slider\image.jpg" />
     <Content Include="images\slider\sketch.png" />
     <Content Include="images\slider\slide1.png" />
     <Content Include="images\slider\slide2.png" />
@@ -485,6 +490,15 @@
       <DependentUpon>Header.edmx</DependentUpon>
       <LastGenOutput>Header.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminWebPages\UploadPic.cshtml" />
+    <Content Include="Areas\En\Views\QIC\AcomplishedWith.cshtml" />
+    <Content Include="Areas\En\Views\QIC\OnGoing.cshtml" />
+    <Content Include="Areas\Ar\Views\QIC\AcomplishedWith.cshtml" />
+    <Content Include="Areas\Ar\Views\QIC\OnGoing.cshtml" />
+    <Content Include="Areas\En\Views\QIC\Career.cshtml" />
+    <Content Include="Areas\Ar\Views\QIC\Career.cshtml" />
     <None Include="Properties\PublishProfiles\PubCode.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
@@ -1443,7 +1457,9 @@
     <Content Include="vendors\rs-plugin\font\revicons90c6.svg" />
     <Content Include="vendors\rs-plugin\js\jquery.themepunch.revolution.min.js" />
     <Content Include="vendors\rs-plugin\js\jquery.themepunch.tools.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1512,6 +1528,7 @@
     <Folder Include="Areas\Ar\Views\Shared\" />
     <Folder Include="Areas\En\Models\" />
     <Folder Include="Areas\En\Views\Shared\" />
+    <Folder Include="Upload\" />
     <Folder Include="vendors\rs-plugin\images\gradient\" />
   </ItemGroup>
   <ItemGroup>

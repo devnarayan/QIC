@@ -26,9 +26,9 @@ namespace QIC.Areas.Admin.Models
         }
     
         public virtual DbSet<Language> Languages { get; set; }
-        public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<WebPage> WebPages { get; set; }
         public virtual DbSet<HeaderContent> HeaderContents { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
+        public virtual DbSet<ContentImage> ContentImages { get; set; }
     }
 }

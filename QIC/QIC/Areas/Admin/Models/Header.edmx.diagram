@@ -6,15 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d9c424e0158d48df818098b9dd329954" Name="Diagram1">
         <EntityTypeShape EntityType="QICdbModel1.Language" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QICdbModel1.Menu" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QICdbModel1.WebPage" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="QICdbModel1.FK_Menu_Language" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QICdbModel1.HeaderContent" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="QICdbModel1.FK_HederContent_Language" />
         <EntityTypeShape EntityType="QICdbModel1.Content" Width="1.5" PointX="6" PointY="6" />
         <AssociationConnector Association="QICdbModel1.FK_Content_Language" />
         <AssociationConnector Association="QICdbModel1.FK_Content_WebPage" />
-      </Diagram>
+        <EntityTypeShape EntityType="QICdbModel1.ContentImage" Width="1.5" PointX="3" PointY="3.625" />
+        <AssociationConnector Association="QICdbModel1.FK_ContentImage_Language" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

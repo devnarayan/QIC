@@ -1,0 +1,86 @@
+﻿@model QIC.Areas.Admin.Models.Content
+@{
+    ViewBag.Title = "UploadPic";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="module">
+    <div class="module-head">
+        <h3>Upload Picture</h3>
+    </div>
+    <div class="module-body" data-ng-app="Upload" data-ng-controller="UploadPicController" data-ng-init="UplaodPicInit()">
+        <form class="form-horizontal row-fluid">
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Select Language</label>
+                <div class="controls">
+                    <div class="dropdown">
+                        <select id="SelectLanguage" name="SelectLanguage" data-ng-model="sg.Lang" data-ng-change="ChangeSelectPic()" style="width:115px;">
+                            <option data-ng-repeat="sg in SelectLanguage" value="{{sg.LanguageID}}">{{sg.Lang}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Select Section</label>
+                <div class="controls">
+                    <div class="dropdown">
+                        <select id="SelectPage" name="SelectPage" data-ng-model="sg.PageName" data-ng-change="ChangeSelectPic()" style="width:115px;">
+                            <option data-ng-repeat="sg in SelectPage" value="{{sg.PageNo}}">{{sg.PageName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="basicinput">Select Pic Name</label>
+                <div class="controls">
+                    <div class="dropdown">
+                        <select id="SelectPicName" name="SelectPicName" data-ng-model="sg.LangContent" data-ng-change="GetPicsInfo()" style="width: 115px;">
+                            <option data-ng-repeat="sg in PicsList" value="{{sg.ContentImageID}}">{{sg.LangContent}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="control-group">
+                <div class="controls">
+                    <input type="file" ng-model-instant id="fileTolandingUpload" ng-model="sg.FeaturesImage" />
+                    <br />
+                    <div class="col-sm-4" style="margin-left:-13px">
+                        <button type="submit" id="btnSave" style=" display:inline; margin-top:0px;" class="btn btn-primary" data-ng-click="UploadLandingImage()" >
+                            Upload Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="col-sm-5">
+                        <img src="{{SelectPicName.PicsUrl}}" id="imgFSrc" width="300" height="200"  />
+                    </div>
+                </div>
+            </div>
+          
+        </form>
+    </div>
+</div>
+<div class="modal fade" id="ValidateModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Please provide following information.</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger" id="ErrorMessage"></p>
+            </div>
+        </div>
+    </div>
+</div> 
+<script src="~/Scripts/angular.js"></script>
+<script src="~/AgController/UploadPicJS.js"></script>
+<script type="text/javascript">
+
+    var basePath = '@System.Configuration.ConfigurationManager.AppSettings["BasePath"]'
+
+</script>

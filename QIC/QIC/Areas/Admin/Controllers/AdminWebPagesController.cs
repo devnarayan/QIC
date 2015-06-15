@@ -8,9 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using QIC.Areas.Admin.Models;
 using AutoMapper;
+using System.IO;
 
 namespace QIC.Areas.Admin.Controllers
 {
+   
     public class AdminWebPagesController : Controller
     {
         private QICdbEntities2 db = new QICdbEntities2();
@@ -47,15 +49,88 @@ namespace QIC.Areas.Admin.Controllers
         {
             return View();
         }
+         [Authorize]
         public ActionResult Header()
         {
             return View();
         }
+         [Authorize]
         public ActionResult ContentPage()
         {
             return View();
         }
+         public ActionResult UploadPic()
+         {
+             return View();
+         }
+        //  start
+         public string GetLanguage1()
+         {
+             List<Language> mdl = new List<Language>();
+             var model = db.Languages.ToList();
+             Mapper.CreateMap<Language, LangugeModel>();
+             var model22 = Mapper.Map<List<Language>, List<LangugeModel>>(model);
+             string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+             return st;
+         }
+         public string GetSelectPage()
+         {
+             List<WebPage> mdl = new List<WebPage>();
+             var model = db.WebPages.ToList();
+             Mapper.CreateMap<WebPage, WebPageModel>();
+             var model22 = Mapper.Map<List<WebPage>, List<WebPageModel>>(model);
+             string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+             return st;
+         }
+         public string GetPicList(int PageNo,int lid)
+         {
+             List<ContentImage> mdl = new List<ContentImage>();
+             var model = db.ContentImages.Where(ps=>ps.WebPageID==PageNo && ps.LanguageID==lid).ToList();
+             Mapper.CreateMap<ContentImage, ContantImageModel>();
+             var model22 = Mapper.Map<List<ContentImage>, List<ContantImageModel>>(model);
+             string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+             return st;
+         }
+         public string GetPicName(int ContentImageID)
+         {
+             ContentImage mdl = new ContentImage();
+             var model = db.ContentImages.Where(ps => ps.ContentImageID == ContentImageID).FirstOrDefault();
+             Mapper.CreateMap<ContentImage, ContantImageModel>();
+             var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+             string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+             return st;
+         }
+         public string UploadImage(HttpPostedFileBase file,int lid,int pageid,int cid)
+         { 
+           string fName = string.Empty;
+           try
+           {
+               if (file != null)
+               {
+                   var ext = Path.GetExtension(file.FileName);
+                   Guid FileName = Guid.NewGuid();
+                   var fileName = FileName + ext;
+                   var path = Server.MapPath("~/Upload/" + fileName);
+                   file.SaveAs(path);
+                   fName = "/Upload/" + fileName;
+                   var mdl = db.ContentImages.Where(sg => sg.ContentImageID == cid).FirstOrDefault();
+                   mdl.PicsUrl = fName;
+                   db.Entry(mdl).State = EntityState.Modified;
+                   int ii = db.SaveChanges();
+               }
 
+               return fName.ToString();
+           }
+           catch (Exception ex)
+           {
+               return "Error";
+           }
+         }
+         public string Save()
+         {
+             return "";
+         }
+        //end
         public string GetLanguage()
         {
             List<LangugeModel> pdashMdl = new List<LangugeModel>();
@@ -106,7 +181,7 @@ namespace QIC.Areas.Admin.Controllers
             }
             return Newtonsoft.Json.JsonConvert.SerializeObject(WphMdl);
         }
-
+     
         public string GetLangContentList(int ContentID)
         {
             QICdbEntities2 context = new QICdbEntities2();
@@ -153,7 +228,131 @@ namespace QIC.Areas.Admin.Controllers
             }
             return Newtonsoft.Json.JsonConvert.SerializeObject(WphMdl);
         }
-
+        public string GetHeaderContent2(int LanguageID)
+        {
+            List<Header_Content> WphMdl = new List<Header_Content>();
+            using (QICdbEntities2 context = new QICdbEntities2())
+            {
+                var Llist = context.HeaderContents.Where(i => i.LanguageID == LanguageID).ToList();
+                foreach (var pl in Llist)
+                {
+                    Mapper.CreateMap<HeaderContent, Header_Content>();
+                    var mdl = Mapper.Map<HeaderContent, Header_Content>(pl);
+                    WphMdl.Add(mdl);
+                }
+            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(WphMdl);
+        }
+        // abha start
+        public string GetPics(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPics1(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPics2(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPics3(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished1(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished2(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished3(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished4(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished5(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished6(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        public string GetPicsAcomplished7(int LanguageID, int WebPageID, int ContentImageID)
+        {
+            ContentImage mdl = new ContentImage();
+            var model = db.ContentImages.Where(i => i.LanguageID == LanguageID && i.WebPageID == WebPageID && i.ContentImageID == ContentImageID).FirstOrDefault();
+            Mapper.CreateMap<ContentImage, ContantImageModel>();
+            var model22 = Mapper.Map<ContentImage, ContantImageModel>(model);
+            string st = Newtonsoft.Json.JsonConvert.SerializeObject(model22);
+            return st;
+        }
+        // end
         public int UpdateHeaderContent(int LanguageID, string txtHome, string txtQIC, string txtMission, string txtGMMessage, string txtIntroduction, string txtScope, string txtCertification, string txtOrganization, string txtProjects, string txtAccomplish, string txtOngoings, string txtCareer, string txtContactUs, string txtAboutCompany, string txtAboutCompanyContent, string txtCompany, string txtCONTACTINFO, string txtPhone, string txtFax, string txtEmail, string txtAddress1, string txtAddress2, string txtAddress3, string txtCopyright, string txtRights)
         {
             using (QICdbEntities2 Context = new QICdbEntities2())

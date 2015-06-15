@@ -177,19 +177,20 @@ myApp.controller('HeaderController', function ($http, $scope) {
         var txtAddress3 = $('#txtAddress3').val();
         var txtCopyright = $('#txtCopyright').val();
         var txtRights = $('#txtRights').val();
-        alert('out');
         $http({
-            method: 'Get',
+            method: 'Post',
             url: basePath + '/Admin/AdminWebPages/UpdateHeaderContent',
-            params: { LanguageID: LanguageID, txtHome: txtHome, txtQIC: txtQIC, txtMission: txtMission, txtGMMessage: txtGMMessage, txtIntroduction: txtIntroduction, txtScope: txtScope, txtCertification: txtCertification, txtOrganization: txtOrganization, txtProjects: txtProjects, txtAccomplish: txtAccomplish, txtOngoings: txtOngoings, txtCareer: txtCareer, txtContactUs: txtContactUs, txtAboutCompany: txtAboutCompany, txtAboutCompanyContent: txtAboutCompanyContent, txtCompany: txtCompany, txtCONTACTINFO: txtCONTACTINFO, txtPhone: txtPhone, txtFax: txtFax, txtEmail: txtEmail, txtAddress1: txtAddress1, txtAddress2: txtAddress2, txtAddress3: txtAddress3, txtCopyright: txtCopyright, txtRights: txtRights }
+            data: { LanguageID: LanguageID, txtHome: txtHome, txtQIC: txtQIC, txtMission: txtMission, txtGMMessage: txtGMMessage, txtIntroduction: txtIntroduction, txtScope: txtScope, txtCertification: txtCertification, txtOrganization: txtOrganization, txtProjects: txtProjects, txtAccomplish: txtAccomplish, txtOngoings: txtOngoings, txtCareer: txtCareer, txtContactUs: txtContactUs, txtAboutCompany: txtAboutCompany, txtAboutCompanyContent: txtAboutCompanyContent, txtCompany: txtCompany, txtCONTACTINFO: txtCONTACTINFO, txtPhone: txtPhone, txtFax: txtFax, txtEmail: txtEmail, txtAddress1: txtAddress1, txtAddress2: txtAddress2, txtAddress3: txtAddress3, txtCopyright: txtCopyright, txtRights: txtRights }
         })
          .success(function (result) {
              console.log(result);
              $("#loading").hide();
+             alert("Header and Footer updated successfully.");
          })
          .error(function (err) {
              $("#loading").hide();
              console.log(err);
+             alert("Error! Please try again.");
          })
     }
 

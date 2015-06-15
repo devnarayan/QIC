@@ -10,16 +10,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Menus">
-      <EntityTypeMapping TypeName="QICdbModel1.Menu">
-        <MappingFragment StoreEntitySet="Menu">
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-          <ScalarProperty Name="EnName" ColumnName="EnName" />
-          <ScalarProperty Name="LangName" ColumnName="LangName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WebPages">
       <EntityTypeMapping TypeName="QICdbModel1.WebPage">
         <MappingFragment StoreEntitySet="WebPage">
@@ -48,6 +38,17 @@
           <ScalarProperty Name="WebPageID" ColumnName="WebPageID" />
           <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
           <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentImages">
+      <EntityTypeMapping TypeName="QICdbModel1.ContentImage">
+        <MappingFragment StoreEntitySet="ContentImage">
+          <ScalarProperty Name="PicsUrl" ColumnName="PicsUrl" />
+          <ScalarProperty Name="LangContent" ColumnName="LangContent" />
+          <ScalarProperty Name="WebPageID" ColumnName="WebPageID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="ContentImageID" ColumnName="ContentImageID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

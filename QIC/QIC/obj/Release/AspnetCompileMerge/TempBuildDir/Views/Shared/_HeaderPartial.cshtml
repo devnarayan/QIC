@@ -7,14 +7,10 @@
     <section id="nr_topStrip" class="row">
         <div class="container">
             <div class="row">
-
                 <ul class="list-inline pull-right c-info fleft">
-                    <li>
+                 <li><a href="~/Brochure.pdf" target="_blank"><i class="fa fa-download"></i> Download Brochure</a></li>
+                      <li>
                         <input id="switch-onText" name="switch-onText" data-on-text="English" ng-model="LanguageID" data-ng-change="ChangeLanguage()"  type="checkbox" checked>
-                        
-                    </li>
-                    <li>
-                        @*<input type="text" data-switch-set-value="onText" value="English" class="form-control">*@
                     </li>
                     @*<li>
                         <select id="DDlLanguage" ng-model="LanguageID" data-ng-change="ChangeLanguage()">
@@ -41,9 +37,10 @@
                 <div class="social_nav logo col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="row">
                         <ul class="list-inline fright">
-                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.gmail.com/intl/en/mail/help/about.html"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Quality-Indicator-Contracting/456613457835918?ref=hl"  target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/qicriyadh" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/100162612525807700029/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,11 +79,11 @@
                         <li class=" dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@*projects*@{{HeaderList[8].HeaderContent1}}</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">@*Accomplished with*@{{HeaderList[9].HeaderContent1}}</a></li>
-                                <li><a href="#">@*Ongoing*@{{HeaderList[10].HeaderContent1}}</a></li>
+                                <li><a href="~/{{LanguageShort}}/QIC/AcomplishedWith">@*Accomplished with*@{{HeaderList[9].HeaderContent1}}</a></li>
+                                <li><a href="~/{{LanguageShort}}/QIC/OnGoing">@*Ongoing*@{{HeaderList[10].HeaderContent1}}</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">@*Career*@{{HeaderList[11].HeaderContent1}}</a></li>
+                        <li><a href="~/{{LanguageShort}}/QIC/Career">@*Career*@{{HeaderList[11].HeaderContent1}}</a></li>
                         <li><a href="~/{{LanguageShort}}/QIC/ContactUs"> @*Contact Us*@{{HeaderList[12].HeaderContent1}}</a></li>
                     </ul>
                 </div>

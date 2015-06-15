@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Project Data\QIC\QIC\QIC\QIC\Areas\Admin\Models\Header.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\QIC Project\QIC 28-05-2015 by dev sir\QIC\QIC\Areas\Admin\Models\Header.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

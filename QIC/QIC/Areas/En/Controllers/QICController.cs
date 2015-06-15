@@ -59,7 +59,18 @@ namespace QIC.Areas.En.Controllers
         {
             return View();
         }
-
+        public ActionResult AcomplishedWith()
+        {
+            return View();
+        }
+        public ActionResult OnGoing()
+        {
+            return View();
+        }
+        public ActionResult Career()
+        {
+            return View();
+        }
 
     }
 }

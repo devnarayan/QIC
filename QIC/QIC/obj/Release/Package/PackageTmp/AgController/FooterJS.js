@@ -9,7 +9,7 @@
         $("#DDLanguage").find(":selected").val(LanguageID);
         $http({
             method: 'Get',
-            url: basePath + '/Admin/AdminWebPages/GetHeaderContent',
+            url: basePath + '/Admin/AdminWebPages/GetHeaderContent2',
             params: { LanguageID: LanguageID }
         }).success(function (result) {
             $scope.HeaderList = result;
