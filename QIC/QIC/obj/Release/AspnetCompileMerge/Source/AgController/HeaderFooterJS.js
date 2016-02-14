@@ -32,9 +32,11 @@ myApp.controller('HeaderFooterController', function ($http, $scope) {
         $scope.LanguageID = LanguageID;
         if (LanguageID == 3) {
             $scope.LanguageShort = "En";
+            localStorage.setItem("Lang",3);
         }
         else {
             $scope.LanguageShort = "Ar";
+            localStorage.setItem("Lang", 4);
         }
        // $("#DDLanguage").val(LanguageID);
         $http({
@@ -43,6 +45,32 @@ myApp.controller('HeaderFooterController', function ($http, $scope) {
             params: { LanguageID: LanguageID }
         }).success(function (result) {
             $scope.HeaderList = result;
+            console.log(result);
+            $("#loading").hide();
+        })
+        .error(function (err) {
+            $("#loading").hide();
+            console.log(err);
+        })
+    }
+
+});
+
+myApp.controller('Header_FooterController', function ($http, $scope) {
+
+    $scope.GetHeaderContent3 = function () {
+   
+        var LanguageID = localStorage.getItem("Lang");
+        if (LanguageID == null || LanguageID==undefined) {
+            LanguageID = $('#DDlLanguage').val();
+        }
+        $("#DDLanguage").find(":selected").val(LanguageID);
+        $http({
+            method: 'Get',
+            url: basePath + '/Admin/AdminWebPages/GetHeaderContent',
+            params: { LanguageID: LanguageID }
+        }).success(function (result) {
+            $scope.FooterList = result;
             console.log(result);
             $("#loading").hide();
         })

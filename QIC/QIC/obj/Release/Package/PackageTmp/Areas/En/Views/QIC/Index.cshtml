@@ -11,7 +11,7 @@
                 <ul>
                     <!-- SLIDE  -->
                     <li data-transition="boxslide" data-slotamount="7">
-                        <img src="~/images/slider/image.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="~/images/slider/sl0.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                         <div class="caption sfr str"
                              data-x="center"
                              data-y="140"
@@ -62,15 +62,14 @@
                         </div>
                     </li>
                     <li data-transition="boxslide" data-slotamount="7">
-                        <img src="~/images/slider/slide1.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="~/images/slider/sl1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                         <div class="caption sfr str"
                              data-x="center"
                              data-y="140"
                              data-speed="700"
                              data-start="1700"
-                             data-easing="easeOutBack">
+                             data-easing="easeOutBack" data-ng-bind-html="ContentList[2].LangContent">
                             @*<h2>We Are <strong>Construction</strong> Company</h2>*@
-                            <div data-ng-bind-html="ContentList[2].LangContent"></div>
 
                         </div>
                         <div class="caption sfl stl"
@@ -79,10 +78,7 @@
                              data-speed="500"
                              data-start="1900"
                              data-easing="easeOutBack">
-                            <div class="cont-row">
-                                <div data-ng-bind-html="ContentList[3].LangContent">
-                                </div> @*We are <span class="bb3">Construction</span> Company <span class="bb1">buildings</span>*@
-                            </div>
+                            <div class="cont-row" data-ng-bind-html="ContentList[3].LangContent"> @*We are <span class="bb3">Construction</span> Company <span class="bb1">buildings</span>*@</div>
                         </div>
                         <div class="caption skewfromleft skewtoleft"
                              data-x="center"
@@ -114,23 +110,23 @@
                     </li>
                     <!-- SLIDE 2 -->
                     <li data-transition="boxslide" data-slotamount="7">
-                        <img src="~/images/slider/slide2.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="~/images/slider/slider2.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                         <div class="caption sfr str"
                              data-x="-100"
                              data-y="135"
                              data-speed="700"
                              data-start="1700"
                              data-easing="easeOutBack">
-                            <div data-ng-bind-html="ContentList[4].LangContent"></div>
+                            <h3 data-ng-bind-html="ContentList[4].LangContent">@*<strong>Flexible</strong> and Easy to Use*@</h3>
                         </div>
-                        <div class="caption sfl stl"
-                     data-x="-100"
-                     data-y="190"
-                     data-speed="500"
-                     data-start="1900"
-                     data-easing="easeOutBack">
-                    <h4>Ultra <strong>Construction</strong> Layout</h4>
-                </div>
+                        @*<div class="caption sfl stl"
+                 data-x="-100"
+                 data-y="190"
+                 data-speed="500"
+                 data-start="1900"
+                 data-easing="easeOutBack">
+                <h4>Ultra <strong>Construction</strong> Layout</h4>
+            </div>*@
                         <div class="caption skewfromleft skewtoleft"
                              data-x="-100"
                              data-y="265"
@@ -164,15 +160,14 @@
                     </li>
                     <!-- SLIDE 3 -->
                     <li data-transition="boxslide" data-slotamount="7">
-                        <img src="~/images/slider/slide3.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="~/images/slider/slider3.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                         <div class="caption sfr str"
                              data-x="-100"
                              data-y="135"
                              data-speed="700"
                              data-start="1700"
-                             data-easing="easeOutBack" >
-                            <div data-ng-bind-html="ContentList[7].LangContent"></div>
-                                 @*<h3><strong>Construction</strong> use</h3>*@
+                             data-easing="easeOutBack" data-ng-bind-html="ContentList[7].LangContent">
+                            @*<h3><strong>Construction</strong> use</h3>*@
                         </div>
                         <div class="caption sfl stl"
                              data-x="-100"
@@ -180,8 +175,56 @@
                              data-speed="500"
                              data-start="1900"
                              data-easing="easeOutBack">
-                            <div></div>
-                            <h4>Built with <strong>Construction</strong></h4>
+                            @*<h4>Built with <strong>Construction</strong></h4>*@
+                        </div>
+                        <div class="caption skewfromleft skewtoleft"
+                             data-x="-100"
+                             data-y="265"
+                             data-hoffset="-176"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <p data-ng-bind-html="ContentList[8].LangContent">
+                                @*This is Photoshop's version of Lorem Ipsum. Proin gravi-<br>da nibh vel velit auctor aliquet. Aenean solicitudin. lorem <br>quis bibendum auctor, nisi elit consequant.*@
+
+                            </p>
+                        </div>
+                        <div class="caption sfb stb"
+                             data-x="-100"
+                             data-y="375"
+                             data-hoffset="0"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <a type="button" class="btn btn-default" data-ng-bind-html="ContentList[9].LangContent">@*Learn More*@</a>
+                        </div>
+                        <div class="caption skewfromright skewtoright"
+                             data-x="right"
+                             data-y="0"
+                             data-hoffset="176"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            <div class="sketch"><img src="~/images/slider/sketch.png" alt="brifcase"></div>
+                        </div>
+                    </li>
+                    <li data-transition="boxslide" data-slotamount="7">
+                        <img src="~/images/slider/slide3.png" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <div class="caption sfr str"
+                             data-x="-100"
+                             data-y="135"
+                             data-speed="700"
+                             data-start="1700"
+                             data-easing="easeOutBack" data-ng-bind-html="ContentList[7].LangContent">
+                            @*<h3><strong>Construction</strong> use</h3>*@
+                        </div>
+                        <div class="caption sfl stl"
+                             data-x="-100"
+                             data-y="190"
+                             data-speed="500"
+                             data-start="1900"
+                             data-easing="easeOutBack">
+                            @*<h4>Built with <strong>Construction</strong></h4>*@
                         </div>
                         <div class="caption skewfromleft skewtoleft"
                              data-x="-100"
@@ -233,7 +276,7 @@
                     <div class="row m0 service">
                         <div class="m0 innerRow">
                             <div class="serviceName" data-hover="Construction Designs">
-                                <a href="#"><img src="~/images/blog/blog3.png" class="img-responsive"></a>
+                                <a href="#"><img src="~/images/blog2/blog1.jpg" class="img-responsive"></a>
                             </div>
                         </div>
                     </div>
@@ -242,7 +285,7 @@
                     <div class="bo-bott"></div>
                     <br />
                     <br />
-                    <button type="button" class="btn btn btn-lg butt" data-ng-bind-html="ContentList[11].LangContent">@*Mechanical*@{{}}</button>
+                    <button type="button" class="btn btn btn-lg butt filter" data-filter=".catHospital" data-ng-bind-html="ContentList[11].LangContent">@*Mechanical*@{{}}</button>
                     <!--left-button end-->
                 </div>
                 <!--left-section start of services end-->
@@ -250,7 +293,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="row m0 service">
                         <div class="m0 innerRow">
-                            <div class="serviceName" data-hover="Fast Building"><a href="#"><img src="~/images/blog/blog3.png" class="img-responsive"></a></div>
+                            <div class="serviceName" data-hover="Fast Building"><a href="#"><img src="~/images/blog2/blog2.jpg" class="img-responsive"></a></div>
                         </div>
                     </div>
                     <!--right-button start-->
@@ -258,7 +301,7 @@
                     <div class="bo-bott"></div>
                     <br />
                     <br />
-                    <button type="button" class="btn btn btn-lg butt" data-ng-bind-html="ContentList[12].LangContent">&nbsp;&nbsp;@*Electrical*@&nbsp;&nbsp;</button>
+                    <button type="button" class="btn btn btn-lg butt filter" data-filter=".catHouses" data-ng-bind-html="ContentList[12].LangContent">&nbsp;&nbsp;@*Electrical*@&nbsp;&nbsp;</button>
                     <!--right-button end-->
                 </div>
                 <!--right-section start of services start-->
@@ -286,62 +329,122 @@
         <div class="row projects m0">
             <div class="container">
                 <div class="project mix catHouses">
-                    <a href="~/images/projects/project1.png" data-lightbox="project" data-title="Central Hospital (building)">
-                        <img src="~/images/projects/project1.png" alt="Project 1" class="projectImg">
+                    <a href="~/images/projects/pro1.jpg" data-lightbox="project" data-title="Chiller Plant">
+                        <img src="~/images/projects/pro1.jpg" alt="Project 1" class="projectImg">
                     </a>
                     <div class="projectDetails row m0">
                         <div class="fleft nameType">
-                            <div class="row m0 projectName">Power System</div>
-                            <div class="row m0 projectType">Commercial Bulding Projects</div>
+                            <div class="row m0 projectName">Chiller Plant</div>
+                            <div class="row m0 projectType"></div>
                         </div>
                         <div class="fright projectIcons btn-group" role="group">
-                            <a href="images/projects/project1.png" data-lightbox="project" data-title="Central Hospital (building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="~/images/projects/pro1.jpg" data-lightbox="project" data-title="Central Hospital (building)" class="btn btn-default"><i class="fa fa-search"></i></a>
                             <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="project mix catHospital">
-                    <a href="images/projects/project2.png" data-lightbox="project" data-title="Construction CEO (ceo, architect)">
-                        <img src="~/images/projects/project2.png" alt="Project 1" class="projectImg">
+                <div class="project mix catSchools">
+                    <a href="~/images/projects/pro2.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro2.jpg" alt="Project 1" class="projectImg">
                     </a>
                     <div class="projectDetails row m0">
                         <div class="fleft nameType">
-                            <div class="row m0 projectName">Verticle Turbine Set</div>
-                            <div class="row m0 projectType">Commercial Bulding Projects</div>
+                            <div class="row m0 projectName">Fire Fighthing</div>
+                            <div class="row m0 projectType"></div>
                         </div>
                         <div class="fright projectIcons btn-group" role="group">
-                            <a href="images/projects/project2.png" data-lightbox="project" data-title="Construction CEO (ceo, architect)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="~/images/projects/pro2.jpg" data-lightbox="project" data-title="QIC" class="btn btn-default"><i class="fa fa-search"></i></a>
                             <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="project mix catFlats">
-                    <a href="images/projects/project3.png" data-lightbox="project" data-title="Workder Accessories (tools, accessories)">
-                        <img src="~/images/projects/project3.png" alt="Project 1" class="projectImg">
+                <div class="project mix catSchools">
+                    <a href="~/images/projects/pro3.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro3.jpg" alt="Project 1" class="projectImg">
                     </a>
                     <div class="projectDetails row m0">
                         <div class="fleft nameType">
-                            <div class="row m0 projectName">Workder Accessories</div>
-                            <div class="row m0 projectType">tools, accessories</div>
+                            <div class="row m0 projectName">Fire Fighting</div>
+                            <div class="row m0 projectType"></div>
                         </div>
                         <div class="fright projectIcons btn-group" role="group">
-                            <a href="images/projects/project3.png" data-lightbox="project" data-title="Workder Accessories (tools, accessories)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="~/images/projects/pro3.jpg" data-lightbox="project" data-title="QIC" class="btn btn-default"><i class="fa fa-search"></i></a>
                             <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project mix catSchools">
-                    <a href="images/projects/project4.png" data-lightbox="project" data-title="Rebuilding an old University (university, building)">
-                        <img src="~/images/projects/project4.png" alt="Project 1" class="projectImg">
+                    <a href="~/images/projects/pro4.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro4.jpg" alt="Project 1" class="projectImg">
                     </a>
                     <div class="projectDetails row m0">
                         <div class="fleft nameType">
-                            <div class="row m0 projectName">Rebuilding an old University</div>
-                            <div class="row m0 projectType">university, building</div>
+                            <div class="row m0 projectName">Fire Fighting</div>
+                            <div class="row m0 projectType"></div>
                         </div>
                         <div class="fright projectIcons btn-group" role="group">
-                            <a href="images/projects/project4.png" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="~/images/projects/pro4.jpg" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project mix catSchools">
+                    <a href="~/images/projects/pro5.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro5.jpg" alt="Project 1" class="projectImg">
+                    </a>
+                    <div class="projectDetails row m0">
+                        <div class="fleft nameType">
+                            <div class="row m0 projectName">Fire Fighting</div>
+                            <div class="row m0 projectType"></div>
+                        </div>
+                        <div class="fright projectIcons btn-group" role="group">
+                            <a href="~/images/projects/pro5.jpg" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project mix catSchools">
+                    <a href="~/images/projects/pro6.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro6.jpg" alt="Project 1" class="projectImg">
+                    </a>
+                    <div class="projectDetails row m0">
+                        <div class="fleft nameType">
+                            <div class="row m0 projectName">Fire Fighting</div>
+                            <div class="row m0 projectType"></div>
+                        </div>
+                        <div class="fright projectIcons btn-group" role="group">
+                            <a href="~/images/projects/pro6.jpg" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project mix catSchools">
+                    <a href="~/images/projects/pro7.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro7.jpg" alt="Project 1" class="projectImg">
+                    </a>
+                    <div class="projectDetails row m0">
+                        <div class="fleft nameType">
+                            <div class="row m0 projectName">Fire Fighting</div>
+                            <div class="row m0 projectType"></div>
+                        </div>
+                        <div class="fright projectIcons btn-group" role="group">
+                            <a href="~/images/projects/pro7.jpg" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
+                            <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project mix catHospital">
+                    <a href="~/images/projects/pro8.jpg" data-lightbox="project" data-title="QIC">
+                        <img src="~/images/projects/pro8.jpg" alt="Project 1" class="projectImg">
+                    </a>
+                    <div class="projectDetails row m0">
+                        <div class="fleft nameType">
+                            <div class="row m0 projectName">Electric Cables</div>
+                            <div class="row m0 projectType"></div>
+                        </div>
+                        <div class="fright projectIcons btn-group" role="group">
+                            <a href="~/images/projects/pro8.jpg" data-lightbox="project" data-title="Rebuilding an old University (university, building)" class="btn btn-default"><i class="fa fa-search"></i></a>
                             <a href="#" class="btn btn-default"><i class="fa fa-file-o"></i></a>
                         </div>
                     </div>

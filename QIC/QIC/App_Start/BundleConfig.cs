@@ -9,6 +9,7 @@ namespace QIC
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/script").Include(
+                      "~/js/jquery-2.1.3.min.js",
                       "~/vendors/rs-plugin/js/jquery.themepunch.tools.min.js",
                       "~/vendors/rs-plugin/js/jquery.themepunch.revolution.min.js",
                       "~/vendors/owl.carousel/js/owl.carousel.min.js",
@@ -18,7 +19,6 @@ namespace QIC
                       "~/vendors/lightbox/js/lightbox.min.js",
                       "~/js/construction.js",
                        "~/js/google-map.js",
-                      "~/js/jquery-2.1.3.min.js",
                       "~/js/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/qiccss").Include(
@@ -35,14 +35,11 @@ namespace QIC
 
 
             bundles.Add(new ScriptBundle("~/AdminContent/js").Include(
-
                 "~/js/jquery.js",
                 "~/js/bootstrap.min.js",
                 "~/js/plugins/morris/raphael.min.js",
                 "~/js/plugins/morris/morris.min.js",
                 "~/js/plugins/morris/morris-data.js"
-
-
                 ));
             bundles.Add(new StyleBundle("~/AdminContent/admincss").Include(
                 "~/css/bootstrap.min.css",

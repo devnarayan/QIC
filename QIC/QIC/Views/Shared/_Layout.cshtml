@@ -8,7 +8,7 @@
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
-    <link rel="icon" href="Images/favicon.ico" type="images/gif" sizes="16x16">
+    <link rel="icon" href="~/Images/favicon.ico" type="images/gif" sizes="16x16">
     <meta name="msapplication-TileColor" content="#da532c">
     @Styles.Render("~/Content/qiccss")
     <!--Bootstrap and Other Vendors-->
@@ -34,14 +34,11 @@
 <body data-ng-app="HeaderFooterApp">
     @Html.Partial("_HeaderPartial")
 
-
-
     @RenderBody()
 
     @Html.Partial("_FooterPartial")
         @Scripts.Render("~/bundles/script")
         <script src="~/Scripts/bootstrap-switch.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
         $("input[type=\"checkbox\"]").not("[data-switch-no-init]").bootstrapSwitch();
         $(document).ready(function () {
@@ -49,15 +46,18 @@
             var lid = localStorage.getItem("Lang");
             if (lid == null) lid = 3;
             $.fn.bootstrapSwitch.defaults.state = false;
-            if (lid == 3){
+            if (lid == 3) {
+                $('.bootstrap-switch-label').html("Arabic");
+               // $('.bootstrap-switch-label').css("background","blue").css("color","white");
                 $('input[name="switch-onText"]').bootstrapSwitch('state', true, true);
                 $("#switch-onText").prop('checked', true);
             }
             else {
-                $('input[name="switch-onText"]').bootstrapSwitch('state', false, false);
+                $('.bootstrap-switch-label').html("English");
+               // $('.bootstrap-switch-label').css("background", "none").css("color", "");
 
+                $('input[name="switch-onText"]').bootstrapSwitch('state', false, false);
             }
-               
         });
         $('input[name="switch-onText"]').on('switchChange.bootstrapSwitch', function (event, state) {
             var LanguageID23 = 3;
@@ -90,13 +90,10 @@
         });
       
     </script>
-    @*<script src="js/jquery-2.1.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>*@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-sanitize.min.js"></script>
     <script src="~/AgController/HeaderFooterJS.js"></script>
     @RenderSection("FooterScript", false)
-    <script src="~/AgController/FooterJS.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 
