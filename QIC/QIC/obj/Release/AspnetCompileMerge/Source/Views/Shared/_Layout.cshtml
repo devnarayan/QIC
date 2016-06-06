@@ -48,15 +48,22 @@
             $.fn.bootstrapSwitch.defaults.state = false;
             if (lid == 3) {
                 $('.bootstrap-switch-label').html("Arabic");
-               // $('.bootstrap-switch-label').css("background","blue").css("color","white");
+             //   $('.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default').css("background", "blue !important");
+               // $('.bootstrap-switch-handle-off').add("style", "background:blue");//("background", "blue").css("color", "white");
                 $('input[name="switch-onText"]').bootstrapSwitch('state', true, true);
                 $("#switch-onText").prop('checked', true);
+               // $('.bootstrap-switch-label').css("background", "blue").css("color", "white");
+              
             }
             else {
                 $('.bootstrap-switch-label').html("English");
+                
                // $('.bootstrap-switch-label').css("background", "none").css("color", "");
 
                 $('input[name="switch-onText"]').bootstrapSwitch('state', false, false);
+                $('.bootstrap-switch-handle-off').add("style", "background:blue");
+                $('.bootstrap-switch-handle-off').css("background", "blue").css("color", "white");
+
             }
         });
         $('input[name="switch-onText"]').on('switchChange.bootstrapSwitch', function (event, state) {
